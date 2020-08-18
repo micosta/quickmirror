@@ -1,0 +1,7 @@
+﻿ApiCall         1.0 QuickMirror.ApiCall.qml
+Calendar        1.0 QuickMirror.Calendar.qml
+Clock           1.0 QuickMirror.Clock.qml
+NewsTicker      1.0 QuickMirror.NewsTicker.qml
+OnThisDay       1.0 QuickMirror.OnThisDay.qml
+PublicTransport 1.0 QuickMirror.PublicTransport.qml
+Weather         1.0 QuickMirror.Weather.qml

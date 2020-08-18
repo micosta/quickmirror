@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Win|x64">
+      <Configuration>Debug_Win</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Win|x64">
+      <Configuration>Release_Win</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_RPi|x64">
+      <Configuration>Debug_RPi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_RPi|x64">
+      <Configuration>Release_RPi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{47AD851F-A5AF-4E78-B833-E5F2C2082798}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <ApplicationType Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">Linux</ApplicationType>
+    <ApplicationTypeRevision Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">Generic</TargetLinuxPlatform>
+    <LinuxProjectType Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+    <ApplicationType Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">Linux</ApplicationType>
+    <ApplicationTypeRevision Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">Generic</TargetLinuxPlatform>
+    <LinuxProjectType Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Fonts_Win.props" />
+    <Import Project="ApiKeys.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Fonts_Win.props" />
+    <Import Project="ApiKeys.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Fonts_RPi.props" />
+    <Import Project="ApiKeys.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Fonts_RPi.props" />
+    <Import Project="ApiKeys.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'">
+    <RemoteCCompileToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteCCompileToolExe>
+    <RemoteCppCompileToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteCppCompileToolExe>
+    <RemoteLdToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteLdToolExe>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'">
+    <RemoteCCompileToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteCCompileToolExe>
+    <RemoteCppCompileToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteCppCompileToolExe>
+    <RemoteLdToolExe>/opt/cross-pi-gcc-8.3.0/bin/arm-linux-gnueabihf-g++</RemoteLdToolExe>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RPi|x64'">
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <RemotePostBuildEvent>
+      <Command>curl --insecure --user pi:password_required -T  /mnt/$(TargetPath.Replace('\','/').Replace(':','').ToLower()) scp://192.168.1.98/home/pi/$(TargetFileName)</Command>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'" Label="QtSettings">
+    <QtInstall>Qt_Windows</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtQMLDebugEnable>true</QtQMLDebugEnable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'" Label="QtSettings">
+    <QtInstall>Qt_Windows</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'" Label="QtSettings">
+    <QtInstall>Qt_RaspberryPi</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtQMLDebugEnable>true</QtQMLDebugEnable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'" Label="QtSettings">
+    <QtInstall>Qt_RaspberryPi</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Win|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Win|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_RPi|x64'" Label="Configuration">
+    <ClCompile>
+      <PositionIndependentCode>true</PositionIndependentCode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release_RPi|x64'" Label="Configuration">
+    <ClCompile>
+      <PositionIndependentCode>true</PositionIndependentCode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Process.cpp" />
+    <None Include="QuickMirrorTypes\QuickMirror.ApiCall.qml" />
+    <None Include="QuickMirrorTypes\QuickMirror.Calendar.qml" />
+    <None Include="QuickMirrorTypes\qmldir" />
+    <None Include="QuickMirrorTypes\QuickMirror.Clock.qml" />
+    <None Include="QuickMirrorTypes\QuickMirror.NewsTicker.qml" />
+    <None Include="QuickMirrorTypes\QuickMirror.OnThisDay.qml" />
+    <None Include="QuickMirrorTypes\QuickMirror.PublicTransport.qml" />
+    <None Include="QuickMirrorTypes\QuickMirror.Weather.qml" />
+    <QtRcc Include="main.qrc" />
+    <None Include="main.qml" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Process.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
